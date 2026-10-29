@@ -168,7 +168,7 @@ test('push notification from sender to receiver happy path', async function (t) 
   await blindPeer.get(addedBlocks - 1, { wait: true, timeout: 500 })
   await receiver.get(addedBlocks - 1, { wait: true, timeout: 500 })
 
-  t.is(receiver.length, addedBlocks, 'reciever has replicated all sender blocks')
+  t.is(receiver.length, addedBlocks, 'receiver has replicated all sender blocks')
 
   {
     const push = await createNotification(blindPeer)
@@ -217,7 +217,7 @@ test('push notification from sender to receiver sad path', async function (t) {
   await blindPeer.get(addedBlocks - 1, { wait: true, timeout: 500 })
   await receiver.get(addedBlocks - 1, { wait: true, timeout: 500 })
 
-  t.is(receiver.length, addedBlocks, 'reciever has replicated all sender blocks')
+  t.is(receiver.length, addedBlocks, 'receiver has replicated all sender blocks')
 
   // receiver app is asleep
   receiverLink.suspend()
